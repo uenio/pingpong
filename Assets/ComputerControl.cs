@@ -12,6 +12,7 @@ public class ComputerControl : MonoBehaviour
     private Rigidbody2D rb2d;
     public Transform ball;
     private int frames = 0;
+    public int delay = 1;
 
     // Use this for initialization
     void Start()
@@ -24,7 +25,7 @@ public class ComputerControl : MonoBehaviour
     void Update()
     {
         frames++;
-        if (frames % 7 == 0)
+        if (frames % delay == 0)
         {
             var vel = rb2d.velocity;
             var pos = transform.position;
@@ -41,7 +42,7 @@ public class ComputerControl : MonoBehaviour
             else if (ballpos.y < pos.y)
             {
                 vel.y -= speed;
-                if (vel.y > -maxSpeed)
+                if (-vel.y < -maxSpeed)
                 {
                     vel.y = -maxSpeed;
                 }
