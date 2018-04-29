@@ -662,6 +662,7 @@ GameObject:
   - component: {fileID: 1555849284}
   - component: {fileID: 1555849283}
   - component: {fileID: 1555849282}
+  - component: {fileID: 1555849287}
   m_Layer: 0
   m_Name: Player02
   m_TagString: Untagged
@@ -675,7 +676,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1555849281}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cdfea87aaf43a2448a7d9fd03bbf84bf, type: 3}
   m_Name: 
@@ -786,6 +787,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1555849287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1555849281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a530f8ee4811d640817db0d0127f09d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveUp: 119
+  moveDown: 115
+  speed: 1
+  maxSpeed: 10
+  boundY: 2.25
+  ball: {fileID: 1930401423}
+  delay: 1
 --- !u!1 &1930401418
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,6 +835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f6be9eb9eaf47e499f313b712d0d02b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravity: 0
+  gravityLvl: 1
 --- !u!50 &1930401420
 Rigidbody2D:
   serializedVersion: 4
