@@ -6,6 +6,8 @@ public class BallControl : MonoBehaviour {
 
     private Rigidbody2D rb2d;
     private Vector2 vel;
+    public bool gravity = true;
+    public int gravityLvl = 1;
 
     void GoBall()
     {
@@ -24,7 +26,14 @@ public class BallControl : MonoBehaviour {
     void Start () {
         rb2d = GetComponent<Rigidbody2D>();
         Invoke("GoBall", 2);
-
+        if (!gravity)
+        {
+            rb2d.gravityScale = 0;
+        }
+        else
+        {
+            rb2d.gravityScale = gravityLvl;
+        }
     }
 
     void ResetBall()
